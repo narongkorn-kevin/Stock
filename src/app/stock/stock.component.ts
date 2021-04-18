@@ -9,6 +9,8 @@ interface DataTablesResponse {
   total: number;
 }
 
+const HEROES = [];
+
 @Component({
   selector: 'app-stock',
   templateUrl: './stock.component.html',
@@ -17,6 +19,11 @@ interface DataTablesResponse {
 
 
 export class StockComponent implements OnInit {
+
+  HEROES = [
+    { id: 0, name: 'Dr Nice' },
+    
+  ];
 
   dtOptions: DataTables.Settings = {};
   stocks: any = [];
@@ -83,6 +90,11 @@ export class StockComponent implements OnInit {
         window.location.reload();
       }
     );
+  }
+
+  onAdd(): void {
+    // console.log(111);
+    this.HEROES.push({ id: 11, name: 'Dr Nice' });
   }
 
 }

@@ -1,13 +1,15 @@
-<form [formGroup]="addForm" (ngSubmit)="addSubmit()" >
+<form [formGroup]="addForm" (ngSubmit)="addSubmit()">
   <input type="text" formControlName="name_part" placeholder="part">
   <input type="text" formControlName="description" placeholder="description">
   <input type="text" formControlName="stock" placeholder="จำนวน">
   <button class="btn btn-primary" type="submit">Submit</button>
 </form>
 
-<table datatable [dtOptions]="dtOptions" class="table table-striped" class="cell-border" >
+<table class="table table-striped" class="cell-border">
+
+  <!-- datatable [dtOptions]="dtOptions" -->
   <thead>
-    <tr style="background-color:#c6d0db;"  >
+    <tr style="background-color:#c6d0db;">
       <th style="text-align:center">No<br>item</th>
       <th style="text-align:center" rowspan="2">Part</th>
       <th style="text-align:center" rowspan="2">Description</th>
@@ -30,21 +32,28 @@
 
     </tr>
   </thead>
-  <tbody *ngIf="stocks?.length != 0">
-    <tr *ngFor="let stock of stocks" >
-      <td style="text-align:center">{{ stock.id }}</td>
-      <td style="text-align:center">{{ stock.name_part}}</td>
-      <td style="text-align:center">{{ stock.description }}</td>
-      <td style="text-align:center">{{ stock.stock }}</td>
-      <td style="text-align:center">{{ stock.input }}</td>
-      <td style="text-align:center">{{ stock.output }}</td>
-      <td style="text-align:center">{{ stock.exc }}</td>
-      <td style="text-align:center">{{ stock.adj }}</td>
-      <td style="text-align:center">{{ stock.balance }}</td>
+  <tbody *ngIf="HEROES?.length != 0">
+    <tr *ngFor="let stock of HEROES">
+      <td style="text-align:center">{{ stock.id}}</td>
+      <td style="text-align:center">{{ stock.name}}</td>
+      <td style="text-align:center">{{ stock.name }}</td>
+      <td style="text-align:center">{{ stock.name }}</td>
+      <td style="text-align:center">{{ stock.name }}</td>
+      <td style="text-align:center">{{ stock.name }}</td>
+      <td style="text-align:center">{{ stock.name }}</td>
+      <td style="text-align:center">{{ stock.name }}</td>
+      <td style="text-align:center">
+    <input >
+      </td>
+      <td>
+        <button type="button" (click)="onAdd()" class="btn btn-primary">
+          Add
+        </button>
+      </td>
 
     </tr>
   </tbody>
-  <tbody *ngIf="stocks?.length == 0">
+  <tbody *ngIf="HEROES?.length == 0">
     <tr>
       <td colspan="3" class="no-data-available">No data!</td>
     </tr>
